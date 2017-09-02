@@ -1,6 +1,6 @@
 function Frame() {
   this.rolls = [];
-  this.pins = 10
+  this.pins = 10;
 };
 
 Frame.prototype.calculateroll1 = function() {
