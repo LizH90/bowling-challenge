@@ -10,7 +10,7 @@ describe("Frame", function() {
     expect(frame.rolls).toEqual([]);
   });
 
-  describe("when calculating rolls", function() {
+  describe("when adding individual rolls to the array", function() {
     beforeEach(function() {
       frame.calculateroll1();
       frame.calculateroll2();
@@ -41,6 +41,23 @@ describe("Frame", function() {
     it("should return as true when a strike", function() {
       frame.rolls = [10];
       expect(frame.isStrike()).toEqual(true);
+    });
+  });
+
+  it("should return true when a spare", function() {
+    frame.rolls = [7,3];
+    expect(frame.isSpare()).toEqual(true);
+  });
+
+  describe("calculating the score", function () {
+    beforeEach(function () {
+      frame.calculateroll1();
+      frame.calculateroll2();
+    });
+
+    it("calculates the sum of the rolls", function () {
+      sum = 10 - frame.pins;
+      expect(frame.sumRolls()).toEqual(sum);
     });
   });
 });

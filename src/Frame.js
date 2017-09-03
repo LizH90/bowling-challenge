@@ -22,3 +22,15 @@ Frame.prototype.isStrike = function() {
   return false
   }
 };
+
+Frame.prototype.isSpare = function() {
+  if (this.sumRolls() === 10) {
+    return true
+  } else {
+    return false
+  }
+};
+
+Frame.prototype.sumRolls = function() {
+  return this.rolls[0] + this.rolls[1];
+};
