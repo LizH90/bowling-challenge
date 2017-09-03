@@ -19,5 +19,9 @@ describe("Game", function() {
       expect(game.scoreboard).not.toEqual([]);
       console.log(game.scoreboard[0]);
     });
+
+    it("creates a new frame once it has been added to the scoreboard", function() {
+      expect(game.frame.rolls).toEqual([]);
+    });
   });
 });

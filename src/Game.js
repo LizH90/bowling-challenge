@@ -1,6 +1,6 @@
-function Game(frame = new Frame()) {
+function Game() {
   this.scoreboard = [];
-  this.frame = frame;
+  this.frame = new Frame();
 };
 
 Game.prototype.createframe = function() {
@@ -10,5 +10,5 @@ Game.prototype.createframe = function() {
 
 Game.prototype.addscore = function() {
   this.scoreboard.push(this.frame.rolls);
-  // this.frame.reset;
+  this.frame = new Frame();
 };
