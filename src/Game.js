@@ -1,19 +1,24 @@
 function Game() {
   this.scoreboard = [];
   this.frame = new Frame();
+  this.score = 0
 };
 
-Game.prototype.firstroll = function() {
-  this.frame.calculateroll1();
+Game.prototype.firstRoll = function() {
+  this.frame.addroll1();
 };
 
-Game.prototype.secondroll = function () {
+Game.prototype.secondRoll = function () {
   if (this.frame.rolls != [10]) {
-  this.frame.calculateroll2();
+  this.frame.addroll2();
   }
 };
 
-Game.prototype.addscore = function() {
+Game.prototype.addScore = function() {
   this.scoreboard.push(this.frame.rolls);
   this.frame = new Frame();
 };
+
+Game.protoype.calculateScore = function() {
+
+}

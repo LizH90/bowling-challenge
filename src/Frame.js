@@ -3,16 +3,14 @@ function Frame() {
   this.pins = 10;
 };
 
-Frame.prototype.calculateroll1 = function() {
-  var roll1 = (Math.floor(Math.random()*11));
-  this.rolls.push(roll1);
-  this.pins = (10 - roll1);
+Frame.prototype.addroll1 = function(pins) {
+  this.rolls.push(pins);
+  this.pins = (10 - pins);
 };
 
-Frame.prototype.calculateroll2 = function() {
-  var roll2 = (Math.floor(Math.random()*(11-this.rolls)));
-  this.rolls.push(roll2);
-  this.pins -= roll2
+Frame.prototype.addroll2 = function(pins) {
+  this.rolls.push(pins);
+  this.pins -= pins
 };
 
 Frame.prototype.isStrike = function() {

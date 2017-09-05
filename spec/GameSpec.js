@@ -12,9 +12,9 @@ describe("Game", function() {
 
   describe("adding to game score", function() {
     beforeEach(function() {
-      game.firstroll();
-      game.secondroll();
-      game.addscore();
+      game.firstRoll();
+      game.secondRoll();
+      game.addScore();
     });
 
     it("adds new instances of frame to the scoreboard", function() {
@@ -25,21 +25,9 @@ describe("Game", function() {
       expect(game.frame.rolls).toEqual([]);
     });
   });
-
-  // describe("when it is a strike", function() {
-  //   beforeEach(function() {
-  //     frame = { calculateroll1: function() {
-  //       var roll1 = 10;
-  //     }};
-  //     game.firstroll();
-  //     console.log(game.frame)
-  //     game.secondroll();
-  //     console.log(game.frame)
-  //     console.log(game.frame.rolls)
-  //   });
-  //
-  //   it("expects 10 pins to knock down in first round", function() {
-  //     expect(game.frame.rolls[1]).toEqual(undefined);
-  //   });
+  // 
+  // it("calculates the cumulative score for normal scores", function() {
+  //   game.scoreboard = ([3,5],[2,4])
+  //   expect(game.score).toEqual(14)
   // });
 });
