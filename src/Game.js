@@ -19,6 +19,8 @@ Game.prototype.addScore = function() {
   this.frame = new Frame();
 };
 
-Game.protoype.calculateScore = function() {
-
-}
+Game.prototype.calculateScore = function() {
+  var cumulativescore = this.scoreboard.reduce(function(a,b) { return a.concat(b) })
+    .reduce(function(a,b) { return a + b });
+  return cumulativescore;
+};

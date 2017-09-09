@@ -30,5 +30,6 @@ Frame.prototype.isSpare = function() {
 };
 
 Frame.prototype.sumRolls = function() {
-  return this.rolls[0] + this.rolls[1];
+  var sum = this.rolls.reduce((a,b) => a+ b, 0);
+  return sum;
 };
