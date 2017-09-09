@@ -51,6 +51,4 @@ describe("Frame", function() {
       expect(frame.isSpare()).toEqual(true);
     });
   });
-
-
 });
