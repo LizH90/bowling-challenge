@@ -35,24 +35,29 @@ Game.prototype.previoussum = function() {
 
 Game.prototype.calculateScore = function() {
   var index = this.scoreboard.length -2;
-  var bonus = this.scoreboard[index];
+  var bonus = this.scoreboard[index+1];
   if (this.scoreboard[1] === undefined) {
     console.log("first")
     this.totalperframe.push(this.scoreboard[0]);
   }
   else if (this.scoreboard[index][0] === 10) {;
     if (this.scoreboard[index-1] === undefined) {
-      console.log("hello")
+      console.log("hello3")
+      this.totalperframe.slice(-2)[0].push(bonus[0]);
+      this.totalperframe.slice(-2)[0].push(bonus[1]);
+      this.totalperframe.push(this.scoreboard[index+1]);
     }
     else if (this.scoreboard[index-1][0] === 10) {
       console.log("hello2")
-      this.totalperframe.pop(this.scoreboard[index-1]);
+      this.totalperframe.slice(-1)[0].push(bonus[0]);
+      this.totalperframe.slice(-1)[0].push(bonus[1]);
       this.totalperframe.slice(-2)[0].push(bonus[0]);
       this.totalperframe.slice(-2)[0].push(bonus[1]);
-      this.totalperframe.push(this.scoreboard[index]);
+      this.totalperframe.push(this.scoreboard[index+1]);
     }
-    console.log("strike")
-    this._Strike();
+    else {
+      this._Strike();
+    }
   }
   else if (this.previoussum() === 10) {
     console.log("spare")
