@@ -66,6 +66,7 @@ describe("Game", function() {
       expect(game.totalperframe).toEqual([[2,3],[6,4,4],[4,3]]);
       game.scoreboard = [[2,3],[6,4],[4,3],[10,0]];
       game.calculateScore();
+      console.log(game.totalperframe)
       expect(game.totalperframe).toEqual([[2,3],[6,4,4],[4,3],[10,0]]);
       game.scoreboard = [[2,3],[6,4],[4,3],[10,0],[4,5]];
       game.calculateScore();

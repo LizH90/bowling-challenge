@@ -35,28 +35,16 @@ Game.prototype.previoussum = function() {
 
 Game.prototype.calculateScore = function() {
   var index = this.scoreboard.length -2;
-  var bonus = this.scoreboard[index+1];
   if (this.scoreboard[1] === undefined) {
-    console.log("first")
     this.totalperframe.push(this.scoreboard[0]);
   }
   else if (this.scoreboard[index][0] === 10) {
-    console.log("strike")
-    this.totalperframe.pop(this.scoreboard[index-1]);
-    this.totalperframe.push(this.scoreboard[index]);
-    this.totalperframe.slice(-1)[0].push(bonus[0]);
-    this.totalperframe.slice(-1)[0].push(bonus[1]);
-    this.totalperframe.push(this.scoreboard[index+1]);
+    this._Strike();
   }
   else if (this.previoussum() === 10) {
-    console.log("spare")
-    this.totalperframe.pop(this.scoreboard[index-1]);
-    this.totalperframe.push(this.scoreboard[index]);
-    this.totalperframe.slice(-1)[0].push(bonus[0]);
-    this.totalperframe.push(this.scoreboard[index+1]);
+    this._Spare();
   }
   else {
-    console.log("else statement");
     this.totalperframe.push(this.scoreboard[index+1]);
   }
 };
@@ -65,4 +53,23 @@ Game.prototype.cumulativeScore = function() {
   var cs = this.totalperframe.reduce(function(a,b) { return a.concat(b) })
     .reduce(function(a,b) { return a + b });
   this.cumulativescore = cs;
+};
+
+Game.prototype._Spare = function() {
+  var index = this.scoreboard.length -2;
+  var bonus = this.scoreboard[index+1];
+  this.totalperframe.pop(this.scoreboard[index-1]);
+  this.totalperframe.push(this.scoreboard[index]);
+  this.totalperframe.slice(-1)[0].push(bonus[0]);
+  this.totalperframe.push(this.scoreboard[index+1]);
+};
+
+Game.prototype._Strike = function() {
+  var index = this.scoreboard.length -2;
+  var bonus = this.scoreboard[index+1];
+  this.totalperframe.pop(this.scoreboard[index-1]);
+  this.totalperframe.push(this.scoreboard[index]);
+  this.totalperframe.slice(-1)[0].push(bonus[0]);
+  this.totalperframe.slice(-1)[0].push(bonus[1]);
+  this.totalperframe.push(this.scoreboard[index+1]);
 };
