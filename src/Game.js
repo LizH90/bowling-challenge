@@ -35,16 +35,31 @@ Game.prototype.previoussum = function() {
 
 Game.prototype.calculateScore = function() {
   var index = this.scoreboard.length -2;
+  var bonus = this.scoreboard[index];
   if (this.scoreboard[1] === undefined) {
+    console.log("first")
     this.totalperframe.push(this.scoreboard[0]);
   }
-  else if (this.scoreboard[index][0] === 10) {
+  else if (this.scoreboard[index][0] === 10) {;
+    if (this.scoreboard[index-1] === undefined) {
+      console.log("hello")
+    }
+    else if (this.scoreboard[index-1][0] === 10) {
+      console.log("hello2")
+      this.totalperframe.pop(this.scoreboard[index-1]);
+      this.totalperframe.slice(-2)[0].push(bonus[0]);
+      this.totalperframe.slice(-2)[0].push(bonus[1]);
+      this.totalperframe.push(this.scoreboard[index]);
+    }
+    console.log("strike")
     this._Strike();
   }
   else if (this.previoussum() === 10) {
+    console.log("spare")
     this._Spare();
   }
   else {
+    console.log("else")
     this.totalperframe.push(this.scoreboard[index+1]);
   }
 };
