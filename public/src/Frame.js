@@ -1,7 +1,7 @@
 function Frame() {
   this.rolls = [];
   this.pins = 10;
-};
+}
 
 Frame.prototype.addroll1 = function(pins) {
   this.rolls.push(pins);
@@ -10,26 +10,26 @@ Frame.prototype.addroll1 = function(pins) {
 
 Frame.prototype.addroll2 = function(pins) {
   this.rolls.push(pins);
-  this.pins -= pins
+  this.pins -= pins;
 };
 
 Frame.prototype.bonusroll = function(pins) {
-  this.rolls.push(pins)
+  this.rolls.push(pins);
 };
 
 Frame.prototype.isStrike = function() {
   if (this.rolls[0] === 10) {
-    return true
+    return true;
   } else {
-  return false
+  return false;
   }
 };
 
 Frame.prototype.isSpare = function() {
   if (this.sumRolls() === 10) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
 };
 
@@ -37,7 +37,7 @@ Frame.prototype.finalRoll = function() {
   if (this.isStrike() || this.isSpare()) {
     throw new Error("You have a bonus roll");
   } else {
-    throw new Error("Game Over")
+    throw new Error("Game Over");
   }
 };
 

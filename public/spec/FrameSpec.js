@@ -57,7 +57,7 @@ describe("Frame", function() {
     it('should give correct message to player for final roll', function() {
       frame.addroll1(7);
       frame.addroll2(3);
-      expect(function(){frame.finalRoll()}).toThrow(new Error('You have a bonus roll'));
+      expect(function(){frame.finalRoll();}).toThrow(new Error('You have a bonus roll'));
     });
 
     it('should give correct message to player for final roll', function() {
@@ -69,7 +69,6 @@ describe("Frame", function() {
     it('should give correct message to player for final roll', function() {
       frame.addroll1(3);
       frame.addroll2(2);
-      console.log(frame.rolls)
       expect(function(){frame.finalRoll();}).toThrow(new Error('Game Over'));
     });
   });

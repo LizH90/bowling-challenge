@@ -3,3 +3,10 @@ li{
   float:left; /*Moves div to next row if the window is too narrow*/
   background:red; border:2px #000 solid; /*For demo*/
 }
+
+h1{
+    font-family: garamond;
+}
+body{
+    font-family: garamond;
+}

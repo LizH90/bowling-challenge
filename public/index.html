@@ -1,32 +1,78 @@
-<<html>
-  <head>
-    <title>Bowling Scoresheet</title>
-    <link href='./css/style.css' rel='stylesheet' type='text/css'>
-    <link href="./css/favicon.ico" rel="icon" type="image/x-icon">
-    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js'></script>
-    <script src='./src/Game.js'></script>
-    <script src='./src/Frame.js'></script>
-    <script src='./src/.js'></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bowling Score Calculator</title>
+<meta name="keywords" content="bowling score calculator strike spare bowling ball ally pins frames bracketing lanes bowling shoes bowling leagues educational education k-12 pe class educator school teacher" />
+<meta name="description" content="A bowling score calculator to help you keep score or adjust a score in any frame. A simple but powerful tool that allows multiple games, handicap score, maximum score and much more." />
+
+    <link rel="shortcut icon" href="images/logo1-min.png">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
   </head>
+<body>
+    </nav>
+        <div class="jumbotron">
+            <div class="header_wayne" >
+                    <img src="images/bowling-lanes.jpg"/>
+                    <h1> Bowling Score Sheet </h1>
+            </div>
+        </div>
 
-  <body>
+        <div class="Jumbotron">
+              <div class="col-md-9" ><h5>Click Number of Pins Knocked Down</h5>
+                  <div class="btn-toolbar pinButtons" role="toolbar">
+                      <button id="btn0" type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="bottom" title="No pins knocked down" onclick="hS(0);" value="0" >0</button>
+                      <button id="btn1" type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="bottom" title="1 pin knocked down" onclick="hS(1);" value="1" >1</button>
+                      <button id="btn2" type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="bottom" title="2 pins knocked down" onclick="hS(2);" value="2" >2</button>
+                      <button id="btn3" type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="bottom" title="3 pins knocked down" onclick="hS(3);" value="3" >3</button>
+                      <button id="btn4" type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="bottom" title="4 pins knocked down" onclick="hS(4);" value="4" >4</button>
+                      <button id="btn5" type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="bottom" title="5 pins knocked down" onclick="hS(5);" value="5" >5</button>
+                      <button id="btn6" type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="bottom" title="6 pins knocked down" onclick="hS(6);" value="6" >6</button>
+                      <button id="btn7" type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="bottom" title="7 pins knocked down" onclick="hS(7);" value="7" >7</button>
+                      <button id="btn8" type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="bottom" title="8 pins knocked down" onclick="hS(8);" value="8" >8</button>
+                      <button id="btn9" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="9 pins knocked down" onclick="hS(9);" value="9" >9</button>
+                      <button id="btn10" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="10 pins knocked down" onclick="hS(10);" value="10" >10</button>
+                      <button id="btn033" type="button" class="btn btn-default pull-right" data-toggle="tooltip" data-placement="bottom"
+                              title="Click to create another game" onclick="m64tew('010C23GF011EO23875755504948');" value="start">Start Another Game &raquo;</button>
+                  </div>
+                  <div>
+                    <ul id="frames">
+                    <li>Frame 1</li>
+                    <li>Frame 2</li>
+                    <li>Frame 3</li>
+                    <li>Frame 4</li>
+                    <li>Frame 5</li>
+                    <li>Frame 6</li>
+                    <li>Frame 7</li>
+                    <li>Frame 8</li>
+                    <li>Frame 9</li>
+                    <li>Frame 10</li>
+                  </ul>
+                </div>
+              </div><!-- dummy three col group to close out a 12 col row -->
+          </div>  <!-- end the row of the buttons for pins knocked down -->
 
-  <div id='title' class='title'><h1>Bowling Scoresheet</h1></div>
+        </div>  <!-- end the row which contains all the frames  -->
 
-  <ul>
-  <li>Frame 1</li>
-  <li>Frame 2</li>
-  <li>Frame 3</li>
-  <li>Frame 4</li>
-  <li>Frame 5</li>
-  <li>Frame 6</li>
-  <li>Frame 7</li>
-  <li>Frame 8</li>
-  <li>Frame 9</li>
-  <li>Frame 10</li>
-</ul>
+
+      <footer class="footer">
+
+      </footer>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="src/Frame.js" type="text/javascript"></script>
+    <script src="src/Game.js" type="text/javascript"></script>
+
 
 
   </body>
-
 </html>

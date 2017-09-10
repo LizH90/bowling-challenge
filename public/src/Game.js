@@ -1,10 +1,10 @@
 function Game() {
   this.scoreboard = [];
   this.frame = new Frame();
-  this.score = []
-  this.totalperframe = []
-  this.cumulativescore = 0
-};
+  this.score = [];
+  this.totalperframe = [];
+  this.cumulativescore = 0;
+}
 
 Game.prototype.firstRoll = function() {
   this.frame.addroll1();
@@ -24,13 +24,13 @@ Game.prototype.addScore = function() {
 Game.prototype.sum = function() {
   var index = this.scoreboard.length - 1;
   var sum = this.scoreboard[index].reduce((a,b) => a+ b, 0);
-  return sum
+  return sum;
 };
 
 Game.prototype.previoussum = function() {
   var index = this.scoreboard.length - 2;
   var sum = this.scoreboard[index].reduce((a,b) => a+ b, 0);
-  return sum
+  return sum;
 };
 
 Game.prototype.calculateScore = function() {
@@ -40,7 +40,7 @@ Game.prototype.calculateScore = function() {
     // console.log("first")
     this.totalperframe.push(this.scoreboard[0]);
   }
-  else if (this.scoreboard[index][0] === 10) {;
+  else if (this.scoreboard[index][0] === 10) {
     if (this.scoreboard[index-1] === undefined) {
       // console.log("hello3")
       this.totalperframe.slice(-2)[0].push(bonus[0]);
@@ -70,10 +70,12 @@ Game.prototype.calculateScore = function() {
 };
 
 Game.prototype.cumulativeScore = function() {
-  var cs = this.totalperframe.reduce(function(a,b) { return a.concat(b) })
-    .reduce(function(a,b) { return a + b });
+  var cs = this.totalperframe.reduce(function(a,b) {
+    return a.concat(b); }).reduce(function(a,b) {
+      return a + b; });
   this.cumulativescore = cs;
 };
+
 
 Game.prototype._Spare = function() {
   var index = this.scoreboard.length -2;
