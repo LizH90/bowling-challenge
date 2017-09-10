@@ -2,14 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <title>Bowling Score Calculator</title>
-<meta name="keywords" content="bowling score calculator strike spare bowling ball ally pins frames bracketing lanes bowling shoes bowling leagues educational education k-12 pe class educator school teacher" />
-<meta name="description" content="A bowling score calculator to help you keep score or adjust a score in any frame. A simple but powerful tool that allows multiple games, handicap score, maximum score and much more." />
-
-    <link rel="shortcut icon" href="images/logo1-min.png">
-
-    <!-- Bootstrap core CSS -->
+<meta name="description" content="A bowling score calculator." />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link href="css/style.css" rel="stylesheet">
   </head>
@@ -37,42 +31,80 @@
                       <button id="btn9" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="9 pins knocked down" onclick="hS(9);" value="9" >9</button>
                       <button id="btn10" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="10 pins knocked down" onclick="hS(10);" value="10" >10</button>
                       <button id="btn033" type="button" class="btn btn-default pull-right" data-toggle="tooltip" data-placement="bottom"
-                              title="Click to create another game" onclick="m64tew('010C23GF011EO23875755504948');" value="start">Start Another Game &raquo;</button>
+                              title="Click to create another game" value="start">Start Another Game </button>
                   </div>
-                  <div>
-                    <ul id="frames">
-                    <li>Frame 1</li>
-                    <li>Frame 2</li>
-                    <li>Frame 3</li>
-                    <li>Frame 4</li>
-                    <li>Frame 5</li>
-                    <li>Frame 6</li>
-                    <li>Frame 7</li>
-                    <li>Frame 8</li>
-                    <li>Frame 9</li>
-                    <li>Frame 10</li>
-                  </ul>
-                </div>
-              </div><!-- dummy three col group to close out a 12 col row -->
-          </div>  <!-- end the row of the buttons for pins knocked down -->
+                  <br>
+                  <br>
 
-        </div>  <!-- end the row which contains all the frames  -->
+        <div id="tablestuff" >
+        <style type="text/css">
+          .tg  {border-collapse:collapse;border-spacing:0;}
+          .tg td{text-align:center;vertical-align:top;font-family:Arial, sans-serif;font-size:14px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+          .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+          .tg .tg-baqh{text-align:center;vertical-align:top}
+          .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+        </style>
+        <table class="tg">
+          <tr>
+            <th class="tg-amwm" colspan="2">Frame 1</th>
+            <th class="tg-amwm" colspan="2">Frame 2</th>
+            <th class="tg-amwm" colspan="2">Frame 3</th>
+            <th class="tg-amwm" colspan="2">Frame 4</th>
+            <th class="tg-amwm" colspan="2">Frame 5</th>
+            <th class="tg-amwm" colspan="2">Frame 6</th>
+            <th class="tg-amwm" colspan="2">Frame 7</th>
+            <th class="tg-amwm" colspan="2">Frame 8</th>
+            <th class="tg-amwm" colspan="2">Frame 9</th>
+            <th class="tg-amwm" colspan="4">Frame 10</th>
+            <th class="tg-amwm">Total Score</th>
+          </tr>
+          <tr>
+            <td class="turn-1">-</td>
+            <td class="turn-2">-</td>
+            <td class="turn-3">-</td>
+            <td class="turn-4">-</td>
+            <td class="turn-5">-</td>
+            <td class="turn-6">-</td>
+            <td class="turn-7">-</td>
+            <td class="turn-8">-</td>
+            <td class="turn-9">-</td>
+            <td class="turn-10">-</td>
+            <td class="turn-11">-</td>
+            <td class="turn-12">-</td>
+            <td class="turn-13">-</td>
+            <td class="turn-14">-</td>
+            <td class="turn-15">-</td>
+            <td class="turn-16">-</td>
+            <td class="turn-17">-</td>
+            <td class="turn-18">-</td>
+            <td class="turn-19">-</td>
+            <td class="turn-20">-</td>
+            <td class="turn-21">-</td>
+            <td class="turn-22">-</td>
+            <td class="total">-</td>
+          </tr>
+          <tr>
+            <td id="f-1-score" class="score-1" colspan="2">-</td>
+            <td id="f-2-score" class="score-2" colspan="2">-</td>
+            <td id="f-3-score" class="score-3" colspan="2">-</td>
+            <td id="f-4-score" class="score-4" colspan="2">-</td>
+            <td id="f-5-score" class="score-5" colspan="2">-</td>
+            <td id="f-6-score" class="score-6" colspan="2">-</td>
+            <td id="f-7-score" class="score-7" colspan="2">-</td>
+            <td id="f-8-score" class="score-8" colspan="2">-</td>
+            <td id="f-9-score" class="score-9" colspan="2">-</td>
+            <td id="f-10-score" class="score-10" colspan="4">-</td>
+            <td class="tg-baqh">-</td>
+          </tr>
+        </table>
+      </div>
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
-
-      <footer class="footer">
-
-      </footer>
-
-    </div>
-
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
-
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="src/Frame.js" type="text/javascript"></script>
-    <script src="src/Game.js" type="text/javascript"></script>
-
-
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+      <script src="src/Frame.js" type="text/javascript"></script>
+      <script src="src/Game.js" type="text/javascript"></script>
+      <script src="src/GameController.js" type="text/javascript"></script>
 
   </body>
 </html>

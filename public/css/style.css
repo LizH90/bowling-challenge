@@ -1,12 +1,29 @@
-li{
-  list-style-type: none; /*Removes bullet points*/
-  float:left; /*Moves div to next row if the window is too narrow*/
-  background:red; border:2px #000 solid; /*For demo*/
+.tg-amwm{
+  background-color:crimson; border:2px #000 solid;
+  color: floralwhite;
+  font-family: garamond;
+
 }
 
 h1{
     font-family: garamond;
 }
-body{
+h3{
     font-family: garamond;
+}
+.body{
+    font-family: garamond;
+    font-size: 0.8em;
+}
+*{
+    font-family: garamond;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+button{
+  font-family: garamond;
+  font-size: 0.9em;
 }
