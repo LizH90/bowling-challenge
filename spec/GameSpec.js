@@ -28,24 +28,29 @@ describe("Game", function() {
 
   describe("calculation the score", function() {
 
-    it("calculates the cumulative score for normal scores", function() {
+    it("calculates the cumulative score for the first score", function() {
       game.scoreboard = [[3,5]];
       game.calculateScore();
+      game.cumulativeScore();
+      expect(game.totalperframe).toEqual([[3,5]]);
       expect(game.cumulativescore).toEqual(8);
-      expect(game.score).toEqual([8]);
     });
 
     it("calculates with a bonus score for a spare", function() {
       game.scoreboard =[[3,7],[2,3]];
       game.calculateScore()
       expect(game.totalperframe).toEqual([[3,7,2],[2,3]]);
+      game.cumulativeScore();
+      expect(game.cumulativescore).toEqual(17)
     });
 
-    // it("calculates with a bonus score for a strike", function() {
-    //   game.scoreboard =[[10,0],[2,3]];
-    //   game.calculateScore()
-    //   expect(game.totalperframe).toEqual("[10,2,3],[2,3]");
-    // });
+    it("calculates with a bonus score for a strike", function() {
+      game.scoreboard =[[10,0],[2,3]];
+      game.calculateScore()
+      expect(game.totalperframe).toEqual([[10,0,2,3],[2,3]]);
+      game.cumulativeScore();
+      expect(game.cumulativescore).toEqual(20)
+    });
 
     it("calculates total score of all frames", function() {
       game.totalperframe = [[5],[4,6,2],[2,3]];

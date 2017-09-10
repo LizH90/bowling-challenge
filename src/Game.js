@@ -34,27 +34,29 @@ Game.prototype.previoussum = function() {
 };
 
 Game.prototype.calculateScore = function() {
+  var index = this.scoreboard.length -2;
+  var bonus = this.scoreboard[index+1];
   if (this.scoreboard[1] === undefined) {
-    this.cumulativescore += this.sum();
-    this.score.push(this.sum());
+    console.log("hello")
+    this.totalperframe.push(this.scoreboard[0]);
   }
-  // else if (this.scoreboard[index] === [10,0]) {
-  //   var index = this.scoreboard.length -1;
-  //   console.log(this.scoreboard[index-2]);
-  //   this.totalperframe.push(this.scoreboard[index]);
-  //   this.totalperframe.push(this.scoreboard[index-1]);
-  // }
-  else if (this.previoussum() === 10) {
-    var index = this.scoreboard.length - 2;
+  else if (this.scoreboard[0][0] === 10) {
     this.totalperframe.push(this.scoreboard[index]);
-    var bonus = this.scoreboard[index+1];
+    this.totalperframe.slice(-1)[0].push(bonus[0]);
+    this.totalperframe.slice(-1)[0].push(bonus[1]);
+    this.totalperframe.push(this.scoreboard[index+1]);
+  }
+  else if (this.previoussum() === 10) {
+    this.totalperframe.push(this.scoreboard[index]);
     this.totalperframe.slice(-1)[0].push(bonus[0]);
     this.totalperframe.push(this.scoreboard[index+1]);
   }
   // else {
-  //   // this.score.push(sum);
-  //   console.log(this.scoreboard[index-2]);
-  //   this.cumulativeScore += sum
+  //   console.log("else statement");
+  //
+  // //   // this.score.push(sum);
+  // //   console.log(this.scoreboard[index-2]);
+  // //   this.cumulativeScore += sum
   // }
 
 };
@@ -62,5 +64,5 @@ Game.prototype.calculateScore = function() {
 Game.prototype.cumulativeScore = function() {
   var cs = this.totalperframe.reduce(function(a,b) { return a.concat(b) })
     .reduce(function(a,b) { return a + b });
-  this.cumulativescore += cs;
+  this.cumulativescore = cs;
 };
