@@ -37,28 +37,28 @@ Game.prototype.calculateScore = function() {
   var index = this.scoreboard.length -2;
   var bonus = this.scoreboard[index+1];
   if (this.scoreboard[1] === undefined) {
-    console.log("hello")
+    console.log("first")
     this.totalperframe.push(this.scoreboard[0]);
   }
-  else if (this.scoreboard[0][0] === 10) {
+  else if (this.scoreboard[index][0] === 10) {
+    console.log("strike")
+    this.totalperframe.pop(this.scoreboard[index-1]);
     this.totalperframe.push(this.scoreboard[index]);
     this.totalperframe.slice(-1)[0].push(bonus[0]);
     this.totalperframe.slice(-1)[0].push(bonus[1]);
     this.totalperframe.push(this.scoreboard[index+1]);
   }
   else if (this.previoussum() === 10) {
+    console.log("spare")
+    this.totalperframe.pop(this.scoreboard[index-1]);
     this.totalperframe.push(this.scoreboard[index]);
     this.totalperframe.slice(-1)[0].push(bonus[0]);
     this.totalperframe.push(this.scoreboard[index+1]);
   }
-  // else {
-  //   console.log("else statement");
-  //
-  // //   // this.score.push(sum);
-  // //   console.log(this.scoreboard[index-2]);
-  // //   this.cumulativeScore += sum
-  // }
-
+  else {
+    console.log("else statement");
+    this.totalperframe.push(this.scoreboard[index+1]);
+  }
 };
 
 Game.prototype.cumulativeScore = function() {
