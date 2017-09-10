@@ -13,6 +13,10 @@ Frame.prototype.addroll2 = function(pins) {
   this.pins -= pins
 };
 
+Frame.prototype.bonusroll = function(pins) {
+  this.rolls.push(pins)
+};
+
 Frame.prototype.isStrike = function() {
   if (this.rolls[0] === 10) {
     return true
@@ -26,6 +30,14 @@ Frame.prototype.isSpare = function() {
     return true
   } else {
     return false
+  }
+};
+
+Frame.prototype.finalRoll = function() {
+  if (this.isStrike() || this.isSpare()) {
+    throw new Error("You have a bonus roll");
+  } else {
+    throw new Error("Game Over")
   }
 };
 

@@ -45,11 +45,11 @@ describe("Game", function() {
     it("calculates with a bonus score for a strike", function() {
       game.scoreboard =[[10,0]];
       game.calculateScore();
-      console.log(game.totalperframe)
+      // console.log(game.totalperframe)
       expect(game.totalperframe).toEqual([[10,0]]);
       game.scoreboard =[[10,0],[2,3]];
       game.calculateScore();
-      console.log(game.totalperframe)
+      // console.log(game.totalperframe)
       expect(game.totalperframe).toEqual([[10,0,2,3],[2,3]]);
       game.cumulativeScore();
       expect(game.cumulativescore).toEqual(20)
@@ -71,7 +71,7 @@ describe("Game", function() {
       expect(game.totalperframe).toEqual([[2,3],[6,4,4],[4,3]]);
       game.scoreboard = [[2,3],[6,4],[4,3],[10,0]];
       game.calculateScore();
-      console.log(game.totalperframe)
+      // console.log(game.totalperframe)
       expect(game.totalperframe).toEqual([[2,3],[6,4,4],[4,3],[10,0]]);
       game.scoreboard = [[2,3],[6,4],[4,3],[10,0],[4,5]];
       game.calculateScore();
@@ -99,27 +99,34 @@ describe("Game", function() {
       game.scoreboard = [[10,0]];
       game.calculateScore();
       expect(game.totalperframe).toEqual([[10,0]]);
-      console.log(game.totalperframe);
+      // console.log(game.totalperframe);
       game.scoreboard = [[10,0],[10,0]];
       game.calculateScore();
-      console.log(game.totalperframe);
+      // console.log(game.totalperframe);
       expect(game.totalperframe).toEqual([[10,0,10,0],[10,0]]);
       game.scoreboard = [[10,0],[10,0],[10,0]];
       game.calculateScore();
-      console.log(game.totalperframe);
+      // console.log(game.totalperframe);
       expect(game.totalperframe).toEqual([[10,0,10,0,10,0],[10,0,10,0],[10,0]]);
       game.scoreboard = [[10,0],[10,0],[10,0],[10,0]];
       game.calculateScore();
-      console.log(game.totalperframe);
+      // console.log(game.totalperframe);
       expect(game.totalperframe).toEqual([[10,0,10,0,10,0],[10,0,10,0,10,0],[10,0,10,0],[10,0]]);
       game.scoreboard = [[10,0],[10,0],[10,0],[10,0],[10,0]];
       game.calculateScore();
-      console.log(game.totalperframe);
+      // console.log(game.totalperframe);
       expect(game.totalperframe).toEqual([[10,0,10,0,10,0],[10,0,10,0,10,0],[10,0,10,0,10,0],[10,0,10,0],[10,0]]);
       game.scoreboard = [[10,0],[10,0],[10,0],[10,0],[10,0],[10,0]];
       game.calculateScore();
-      console.log(game.totalperframe);
+      // console.log(game.totalperframe);
       expect(game.totalperframe).toEqual([[10,0,10,0,10,0],[10,0,10,0,10,0],[10,0,10,0,10,0],[10,0,10,0,10,0],[10,0,10,0],[10,0]]);
     })
   });
+
+  // describe("calculation the score", function() {
+  //
+  //   it("calculates the final frame", function() {
+  //     game.scoreboard = [[3,5],[10,0],[3,4],[5,5],[3,1],[5,4],[]];
+  //   });
+  // });
 });
